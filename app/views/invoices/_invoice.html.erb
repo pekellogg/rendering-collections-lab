@@ -1,0 +1,9 @@
+<% if !invoice.orders.empty? %>
+    <% invoice.orders.sort_by{|o|o.customer_id}.each do |order| %>
+        <tr>
+            <td><%= order.invoice_id %></td>
+            <td><%= order.customer.name %></td>
+            <td><%= order.products.first.name %></td>
+        </tr>
+    <% end %>
+<% end %>
